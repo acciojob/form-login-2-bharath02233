@@ -1,16 +1,69 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <h2>Fill the Form</h2>
+    <form id="userForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="First Name" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="Last Name" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="Phone Number" required>
+        
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="Email ID" required>
+        
+        <button type="button" onclick="showAlert()">Submit</button>
+    </form>
 
+    <script>
+        function showAlert() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            
+            let message = `First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phone} Email ID: ${email}`;
+            alert(message);
+        }
+    </script>
 </body>
-
 </html>
